@@ -1,0 +1,31 @@
+﻿@model Store.Models.ViewModels.LoginModel
+@{
+    ViewBag.Title = "Login";
+}
+<h2>Login</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div>
+        <h4>Registration Form</h4>
+        <hr />
+        @Html.ValidationSummary()
+        <div>
+            @Html.DisplayNameFor(m => m.Email)
+            @Html.EditorFor(m => m.Email)
+        </div>
+        <div>
+            @Html.DisplayNameFor(m => m.Password)
+            @Html.EditorFor(m => m.Password)
+        </div>
+        <div>
+            <input type="submit" value="Press the button to login!" />
+        </div>
+        <div>
+            <input type="reset" value="Clear form" />
+        </div>
+    </div>
+}
+

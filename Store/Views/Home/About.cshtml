@@ -1,0 +1,22 @@
+﻿@using Store.Models
+@model AboutModel
+
+@{
+    ViewBag.Title = "Quantity cars";
+}
+<h2>@ViewBag.Title.</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.EditorFor(m => m.ConcreteMark)
+    <br />
+    <input type="submit" value="Get cars Qty">
+}
+<br />
+<hr />
+
+@if (Model != null)
+{
+    <p>Cars quantity -  @Html.DisplayFor(m => m.Quantity)</p>
+
+}
